@@ -4,21 +4,25 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        StringBuffer text = new StringBuffer("hello John, how are you today? fine, thank you. When will you leave John? Tomorrow.");
+        String text = new String ("hello John how are you today fine, thank you. When will you leave John Tomorrow");
 
-        String str_to_replace = "John";
-        String str_which_replace = "Alexander";
-        int str_to_replace_length = str_to_replace.length();
+        int word_num =4;
+        String word_which_replace = "capybara";
+        String [] words = text.split(" ");
 
-        for (int i = 0; i < text.length(); i++) {
-            if (text.charAt(i) == str_to_replace.charAt(0) && text.substring(i,i+str_to_replace.length()).equals(str_to_replace)) {
-                text.delete(i,i+str_to_replace.length());
-                text.insert(i,str_which_replace);
-                i+=str_which_replace.length();
-            }
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() == word_num) {words[i] = word_which_replace;}
+            System.out.println(words[i]);
         }
 
-        System.out.println(text);
+
+
+      StringBuffer final_text = new StringBuffer();
+        final_text.append(words[0]);
+        for (int i = 1; i < words.length; i++) {
+            final_text.append(" ").append(words[i]);
+        }
+        System.out.println(final_text);
 
     }
 }
