@@ -1,6 +1,8 @@
 package Tests;
 
 import Pages.LoginPage;
+import User.User;
+import User.UserFactory;
 import org.apache.log4j.Logger;
 import org.junit.AfterClass;
 import org.junit.rules.Timeout;
@@ -21,9 +23,10 @@ public class MyTest extends BaseTest {
 
     @Test(description = "Login Test")
     public void testTest() throws Exception {
-        app.login.login("mytest_test@mail.ru","33777da");
+        User validuser = UserFactory.getValidUser();
+        app.login.login(validuser);
 
-        Assert.assertEquals(app.afterloginstep.getMailUser(),"mytest_test@mail.ru","Error ");
+        Assert.assertEquals(app.afterloginstep.getMailUser(),validuser.mail,"Error ");
 
 
     }

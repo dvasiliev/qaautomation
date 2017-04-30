@@ -24,6 +24,7 @@ public class LoginPage extends BasePage{
 	}
 
 	protected void authBauttonClick() throws InterruptedException {
+		driver.findElementsWithWait();
 		authButton.submit();
 		Thread.sleep(7000);
 	}

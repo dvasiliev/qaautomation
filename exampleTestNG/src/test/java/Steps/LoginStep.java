@@ -2,6 +2,7 @@ package Steps;
 
 import Pages.AfterLoginPage;
 import Pages.LoginPage;
+import User.User;
 import org.apache.log4j.Logger;
 
 /**
@@ -9,10 +10,10 @@ import org.apache.log4j.Logger;
  */
 public class LoginStep extends LoginPage{
     Logger logger = Logger.getLogger("LoginStep");
-    public AfterLoginStep login(String name, String password) throws InterruptedException {
-        setName_(name);
-        setPassword_(password);
-        logger.info(String.format("log user name - %s password - %s",name,password));
+    public AfterLoginStep login(User user) throws InterruptedException {
+        setName_(user.login);
+        setPassword_(user.password);
+        logger.info(String.format("log user name - %s password - %s",user.login,user.password));
         authBauttonClick();
         return new AfterLoginStep();
     }
