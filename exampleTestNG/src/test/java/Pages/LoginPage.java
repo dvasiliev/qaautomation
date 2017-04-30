@@ -14,6 +14,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class LoginPage extends BasePage{
 
 
+	protected void setName_(String name) {
+		name_.sendKeys(name);
+	}
+
+
+	protected void setPassword_(String password) {
+		password_.sendKeys(password);
+	}
+
+	protected void authBauttonClick() throws InterruptedException {
+		authButton.submit();
+		Thread.sleep(7000);
+	}
+
 	@FindBy(id="mailbox__login")
 	private WebElement name_;
 
@@ -24,17 +38,6 @@ public class LoginPage extends BasePage{
 	private WebElement authButton;
 
 
-	public LoginPage(WebDriver driver) {
-		super(driver);
-	}
 
-	public AfterLoginPage login(String name, String password) throws InterruptedException {
-		new WebDriverWait(driver,10).until(ExpectedConditions.titleIs("Title"));
-		name_.sendKeys(name);
-		password_.sendKeys(password);
-		authButton.submit();
-		Thread.sleep(7000);
-		return new AfterLoginPage(driver);
-	}
 
 }

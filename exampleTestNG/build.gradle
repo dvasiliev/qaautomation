@@ -2,11 +2,25 @@ group 'com.myProjectTestNG'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'idea'
 
-
+defaultTasks 'clean', 'test'
 
 repositories {
     mavenCentral()
+}
+
+configurations {
+    agent
+}
+ext {
+    groovyVersion = '2.4.7'
+    gebVersion = '1.0'
+    seleniumVersion = '3.0.1'
+    httpBuilderVersion = '0.7'
+    log4jVersion = '1.2.17'
+    aspectjVersion='1.8.0'
+    allureVersion='1.4.11'
 }
 
 dependencies {
@@ -18,6 +32,10 @@ dependencies {
    // compile group: 'info.cukes', name: 'cucumber-java', version: '1.2.5'
     // https://mvnrepository.com/artifact/io.appium/java-client
     compile group: 'io.appium', name: 'java-client', version: '4.1.2'
+    testCompile group: 'log4j', name: 'log4j', version: '1.2.17'
+
+    agent "org.aspectj:aspectjweaver:${aspectjVersion}"
+    testCompile "ru.yandex.qatools.allure:allure-testng-adaptor:${allureVersion}"
 }
 
 task ChromeTest(type: Test) {

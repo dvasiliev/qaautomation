@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1493459734862" stop="1493459742239" version="1.4.11" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Vwewbgfeiugfiuwqgwfgiugeqriugegiur : Webdriver</name>
+    <title>Vwewbgfeiugfiuwqgwfgiugeqriugegiur : Webdriver</title>
+    <test-cases>
+        <test-case start="1493459734900" stop="1493459742197" status="passed">
+            <name>testTest</name>
+            <title>Failing test</title>
+            <description>Login Test</description>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="DESKTOP-K0O46L7"/>
+                <label name="thread" value="9924@DESKTOP-K0O46L7.Test worker(12)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

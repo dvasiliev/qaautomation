@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Tests.MyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-04-29T09:55:34" hostname="DESKTOP-K0O46L7" time="7.309">
+  <properties/>
+  <testcase name="testTest" classname="Tests.MyTest" time="7.309"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

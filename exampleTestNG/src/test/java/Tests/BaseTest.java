@@ -1,6 +1,7 @@
 package Tests;
 
 import drivers.MyDriverFactory;
+import javafx.application.Application;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -18,23 +19,16 @@ import java.io.File;
  */
 public class BaseTest {
 
-    protected WebDriver driver;
-    final String BASE_URL = "https://mail.ru/";
+    MyApplication app;
 
     @BeforeSuite
     public void beforeSuite() throws Exception {
-
-
-        //FirefoxBinary binary = new FirefoxBinary(new File("C:\\Program Files\\Firefox Developer Edition\\firefox.exe"));
-        //FirefoxProfile profile = new FirefoxProfile(new File("C:\\Users\\Dima\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\v3gry1ir.default"));
-        //driver = new FirefoxDriver(profile);
-        //driver = new InternetExplorerDriver();
-        driver = MyDriverFactory.getDriver();
-        driver.get(BASE_URL);
+        app = new MyApplication();
+        app.common.startDriver();
     }
 
     @AfterSuite
     public void afterSuite() throws Exception {
-        driver.quit();
+        app.common.stopDriver();
     }
 }
